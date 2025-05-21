@@ -8,3 +8,29 @@ import WidgetParent  from '../components/WidgetParent.astro';
     <Camera />
     
 
+<style>
+  :root {
+    --widget-bg: rgba(241, 241, 241, 0.767);
+    --widget-padding: 1em;
+    --widget-width: 300px;
+    --widget-gap: 1em;
+      --silhouette-color: black;
+  --bg-color: hsl(210, 40%, 95%);
+  --text-color: hsl(210, 20%, 30%);
+  --font-family: 'Segoe UI', sans-serif;
+  }
+
+body {
+  background: var(--bg-color);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  text-align: center;
+}
+    
+</style>
