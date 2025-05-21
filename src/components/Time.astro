@@ -1,6 +1,5 @@
 
-        <h1>Time</h1>
-        <time>
+        <time class="time">
           <data class="hours">HH</data> : <data class="minutes">MM</data> :
           <data class="seconds">SS</data>
           <data class="amOrPM">AM/PM</data>
@@ -8,7 +7,14 @@
 
         <style>
 
-          
+          .hours, .minutes, .seconds, .amOrPM {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--text-color-two);
+          }
+          .time {
+            display: block
+          }
 
         </style>
 

@@ -32,11 +32,13 @@ import Pokemon from './Pokemon.astro';
     gap: var(--widget-gap);
     padding: var(--widget-gap);
     box-sizing: border-box;
+    margin-right: var(--widget-margin)
   }
 
   section {
     background: var(--widget-bg);
     padding: var(--widget-padding);
+    width: var(--widget-width);
     position: relative;
     flex: 0 0 auto;
     border-radius: 0.5rem;
@@ -44,12 +46,14 @@ import Pokemon from './Pokemon.astro';
     -webkit-backdrop-filter: blur(10px); 
     border: 1px solid rgba(255, 255, 255, 0.3); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    width: 300px;
+
     text-align: center;
     
 
     
   }
+
+
   
 </style>
 
