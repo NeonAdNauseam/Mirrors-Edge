@@ -2,34 +2,50 @@
 import Date from './Date.astro';
 import Time from './Time.astro';
 import Weather from './Weather.astro';
+import Pokemon from './Pokemon.astro';
 ---
 
 <main>
+ <section>
 <Date />
 <Time />
+</section>
+<section>
 <Weather />
+</section>
+<section>
+<Pokemon />
+</section>
 </main>
 
 <style>
+  :root {
+    --widget-bg: rgba(211, 211, 211, 0.5);
+    --widget-padding: 1em;
+    --widget-width: 300px;
+    --widget-gap: 1em;
+  }
 
-    /* Grid */
-main {
-  /* Set your own grid   */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 400px;
-  grid-column-gap: 1em;
-}
+  main {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: var(--widget-width);
+    display: flex;
+    flex-direction: column;
+    gap: var(--widget-gap);
+    padding: var(--widget-gap);
+    box-sizing: border-box;
+  }
 
-/* Widgets */
-section {
-  background: rgba(211, 211, 211, 0.5);
-  padding: 1em;
-  
-  /* Relative Parent. Absolute Child */
-  position: relative;
-}
-
+  section {
+    background: var(--widget-bg);
+    padding: var(--widget-padding);
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 0.5rem;
+  }
 </style>
 
 
