@@ -1,4 +1,4 @@
-      <section class="time">
+<section class="time">
         <h1>Time</h1>
         <time>
           <data class="hours">HH</data> : <data class="minutes">MM</data> :
@@ -6,6 +6,13 @@
           <data class="amOrPM">AM/PM</data>
         </time>
       </section>
+
+
+
+
+
+
+
 
       <script>
         /************
@@ -36,12 +43,12 @@ Format Data
 const gotAmOrPM = gotHours >= 12 ? 'PM' : 'AM';
 // Get 12 hour format
 gotHours = gotHours % 12 || 12;
-// Optionally, append zero to single digit hours
-gotHours = gotHours < 10 ? `0${gotHours}` : gotHours;   
-// Optionally, append zero to single digit minutes
-gotMinutes = gotMinutes < 10 ? `0${gotMinutes}` : gotMinutes;
-// Optionally, append zero to single digit seconds
-gotSeconds = gotSeconds < 10 ? `0${gotSeconds}` : gotSeconds;
+// Optionally, append zero to single digit hours for display
+const displayHours = gotHours < 10 ? `0${gotHours}` : gotHours.toString();
+// Optionally, append zero to single digit minutes for display
+const displayMinutes = gotMinutes < 10 ? `0${gotMinutes}` : gotMinutes.toString();
+// Optionally, append zero to single digit seconds for display
+const displaySeconds = gotSeconds < 10 ? `0${gotSeconds}` : gotSeconds.toString();
 
 /************
 Get DOM Elements
@@ -62,17 +69,19 @@ Set DOM Elements
 if (hours) hours.innerText = `${gotHours}`;
 // Set the minutes
 if (minutes) minutes.innerText = `${gotMinutes}`;
+// Set the hours
+if (hours) hours.innerText = displayHours;
+// Set the minutes
+if (minutes) minutes.innerText = displayMinutes;
 // Set the seconds
-if (seconds) seconds.innerText = `${gotSeconds}`;
+if (seconds) seconds.innerText = displaySeconds;
 // Set AM or PM
 if (amOrPM) amOrPM.innerText = gotAmOrPM;
-  
-}
-
-/************
-Run App
-************/
 // Re-run `theClockApp` every 1 second (1000 ms)
 setInterval(theClockApp, 1000);
+
+}; // <-- Add this closing brace for theClockApp function
+
+theClockApp(); // Optionally, run once on load
 
       </script>
