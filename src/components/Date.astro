@@ -1,16 +1,20 @@
         <time class="date">
-          <data class="month">Month</data>
-          <data class="dayOfMonth">00</data>, <data class="year">0000</data> -
           <data class="dayOfWeek">SMTWTFS</data>
+          <data class="month">Month</data>
+          <data class="dayOfMonth">00</data>, <data class="year">0000</data>
         </time>
 
         <style>
 
 
                     .month, .dayOfMonth, .dayOfWeek, .year {
-            font-size: 2em;
+            font-size: var(--font-size);
             font-weight: bold;
             color: var(--text-color-two);
+            
+          }
+          .dayOfWeek {
+            display: block;
           }
           .date {
             display: block;
