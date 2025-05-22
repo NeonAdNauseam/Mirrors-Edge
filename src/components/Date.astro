@@ -1,102 +1,103 @@
-        <time class="date">
-          <data class="dayOfWeek">SMTWTFS</data>
-          <data class="month">Month</data>
-          <data class="dayOfMonth">00</data>, <data class="year">0000</data>
-        </time>
+<time class="date">
+  <data class="dayOfWeek">SMTWTFS</data>
+  <data class="month">Month</data>
+  <data class="dayOfMonth">00</data>, <data class="year">0000</data>
+</time>
 
-        <style>
-
-
-                    .month, .dayOfMonth, .dayOfWeek, .year {
-            font-size: var(--font-size);
-            font-weight: bold;
-            color: var(--text-color-two);
-            
-          }
-          .dayOfWeek {
-            display: block;
-          }
-          .date {
-            display: block;
-          }
-        </style>
-
+<style>
+  .month,
+  .dayOfMonth,
+  .dayOfWeek,
+  .year {
+      font-size: var(--font-size-medum);
+      font-family: var(--font-style-body);
+  }
+  .dayOfWeek {
+    display: block;
+          font-size: var(--font-size-large);
+      font-family: var(--font-style-header);
+  }
+  .date {
+    display: block;
+      font-size: var(--font-size-medum);
+      font-family: var(--font-style-body);
+  }
+</style>
 
 <script>
-    /************
+  /************
 Static Data
 ************/
-const allTheMonths = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
-const allTheDays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
+  const allTheMonths = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const allTheDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-/************
+  /************
 Dynamic Data
 ************/
-// Get and store current date and time with `new Date()` object
-const dateNow = new Date();
-// Check-Check: See all `Date()` methods and properties
-console.log( dateNow );
+  // Get and store current date and time with `new Date()` object
+  const dateNow = new Date();
+  // Check-Check: See all `Date()` methods and properties
+  console.log(dateNow);
 
-const gotMonth = dateNow.getMonth();
-// Get current day of the month
-let gotDayOfMonth = dateNow.getDate();
-// Get current year
-const gotYear = dateNow.getFullYear();
-// Get current day of the week
-const gotDayOfWeek = dateNow.getDay();
+  const gotMonth = dateNow.getMonth();
+  // Get current day of the month
+  let gotDayOfMonth = dateNow.getDate();
+  // Get current year
+  const gotYear = dateNow.getFullYear();
+  // Get current day of the week
+  const gotDayOfWeek = dateNow.getDay();
 
-// Check-Check: Is the data correct? 
-console.log(gotMonth, gotDayOfMonth, gotYear, gotDayOfWeek);
+  // Check-Check: Is the data correct?
+  console.log(gotMonth, gotDayOfMonth, gotYear, gotDayOfWeek);
 
-/************
+  /************
 Get DOM Elements
 ************/
-// Get the month
-const month = document.querySelector(".month");
-// Get day of the month
-const dayOfMonth = document.querySelector(".dayOfMonth");
-// Get year
-const year = document.querySelector('.year');
-// Get Day of Week
-const dayOfWeek = document.querySelector('.dayOfWeek');
+  // Get the month
+  const month = document.querySelector(".month");
+  // Get day of the month
+  const dayOfMonth = document.querySelector(".dayOfMonth");
+  // Get year
+  const year = document.querySelector(".year");
+  // Get Day of Week
+  const dayOfWeek = document.querySelector(".dayOfWeek");
 
-
-/************
+  /************
 Set DOM Elements
 ************/
-// Set the month
-if (
-  month instanceof HTMLElement &&
-  dayOfMonth instanceof HTMLElement &&
-  year instanceof HTMLElement &&
-  dayOfWeek instanceof HTMLElement
-) {
-  month.innerText = allTheMonths[gotMonth];
-  dayOfMonth.innerText = `${gotDayOfMonth}`;
-  year.innerText = `${gotYear}`;
-  dayOfWeek.innerText = allTheDays[gotDayOfWeek];
-} else {
-  console.warn("One or more date elements not found in the DOM.");
-}
+  // Set the month
+  if (
+    month instanceof HTMLElement &&
+    dayOfMonth instanceof HTMLElement &&
+    year instanceof HTMLElement &&
+    dayOfWeek instanceof HTMLElement
+  ) {
+    month.innerText = allTheMonths[gotMonth];
+    dayOfMonth.innerText = `${gotDayOfMonth}`;
+    year.innerText = `${gotYear}`;
+    dayOfWeek.innerText = allTheDays[gotDayOfWeek];
+  } else {
+    console.warn("One or more date elements not found in the DOM.");
+  }
 </script>
